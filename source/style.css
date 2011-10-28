@@ -1,0 +1,74 @@
+@import "reset.css";
+
+/*------------------------GENERAL STYLES---------------------------*/
+body { font: 10px Verdana, Arial, Helvetica, sans-serif; color: #767676; background: #eee; }
+#wrap{ width: 1010px; margin: 0 auto; }
+li { list-style: none; }
+a, a:hover { text-decoration: none; color: #a5a5a5; }
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right; }
+
+/*----------------------------HEADER-------------------------------*/
+#header { background: #eeeeee url(images/header-back.png) no-repeat; width: 1010px; height: 107px; padding-top: 40px; margin: 0 auto; }
+#header h1 { float: left; background: url(images/indal-logo.png) no-repeat; width: 120px; height: 45px; text-indent: -9999px; margin: 0 40px 0 44px; }
+#header h2 { font-size: 16px; color: #eee; padding-top: 25px; font-weight: bold; text-shadow: #000 0px 0px 5px;}
+
+/*------------------------------MAIN--------------------------------*/
+#main { margin: 0 auto; width: 1000px; min-height: 200px; }
+#main form.formlogin { width: 500px; margin: 0 auto; padding-top: 50px; }
+#main div.forminput { margin-right: 20px; float: left; }
+#main div.forminput label { width: 150px; }
+#main p.username { font-size: 12px; font-weight: bold; }
+
+#menu { margin-bottom: 30px; }
+.btn { display: inline-block; background: none; margin: 0; padding: 3px 0; border-width: 0; overflow: visible; text-decoration: none; }
+.btn span { background: #ddd url(images/bg-button.gif) repeat-x 0 0; margin: 0; padding: 3px 0; border-left: 1px solid #bbb; border-right: 1px solid #aaa; }
+.btn span span { position: relative; padding: 3px .4em 3px 20px; border-width: 0; border-top: 1px solid #bbb; border-bottom: 1px solid #aaa; }
+.btn:hover span, .btn:hover span span, .btn:focus span, .btn:focus span span { cursor: pointer; border-color: #9cf !important; color: #000; }
+.btn:active span { background-position: 0 -400px; outline: none; }
+.btn:focus, .btn:active { outline: none; }
+
+.btn span.logout { background: url(images/x_alt_12x12.png) no-repeat 4px 4px; }
+.btn span.adduser { background: url(images/plus_alt_12x12.png) no-repeat 3px 3px; }
+.btn span.addfile { background: url(images/pen_alt_stroke_12x12.png) no-repeat 3px 3px; }
+.btn span.archives{ background: url(images/layers_12x11.png) no-repeat 3px 3px; }
+.btn span.setdelay{ background: url(images/clock_12x12.png) no-repeat 3px 3px; }
+.btn span.changepassword{ background: url(images/key_stroke_12x12.png) no-repeat 3px 3px; }
+.btn span.retouraccueil{ background: url(images/arrow_left_alt1_12x12.png) no-repeat 3px 3px; }
+
+#dossier { margin-left: 60px; margin-bottom: 30px;}
+#dossier .listag { float: left; }
+#dossier .listhid { visibility: hidden; width: 0px; height: 0px; }
+#dossier .listhide, #tableau .listhide { display: none; width: 500px; height: 150px; }
+#dossier .listvis { visibility: visible; }
+#dossier .submit { padding-right: 50px; }
+#dossier .paddingleft50 { padding-left: 50px; }
+.rouge { color: #be0e0e; font-style : italic; }
+
+#info, #delay-text { background: #be0e0e; color: #fff; font-size: 14px; font-weight: bold; font-style: italic; }
+#info { text-align: center; width: 300px; height: 50px; margin: 0 auto; padding: 20px;}
+#delay-text { border: 0; font-size: 18px; }
+#period-text { border: 0; background: #eee; color: #f58820; font-weight: bold; }
+#period-range { width: 300px; }
+
+#tableau { margin: 50px 0; }
+#tableau .table { width: 100%; font-size: 12px; border-collapse: collapse; border:1px solid #bbb; }
+#tableau .table tr { height: 25px;}
+#tableau .table td { padding: 5px; border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; }
+#tableau .tabletitle { font-size: 14px; font-weight: bold; color: #fff; background: #bbb; text-align: center; }
+#tableau .tabletitle th { padding: 5px; border-left: 1px solid #ddd; border-right: 1px solid #999; }
+#tableau .statutenvoye { background: #fee516; color: #767676; cursor: pointer; }
+#tableau .statutattente { background: #be0e0e; color: #fff; cursor: pointer; }
+#tableau .statutcours { cursor: pointer; }
+
+#tableau .bk_upleft { background: #eee url(images/bkdk.png) no-repeat top left; width: 10px; height: 10px; }
+#tableau .bk_up { background: #eee url(images/bkdk.png) repeat-x top 10px; width: 100%; height: 10px; }
+#tableau .bk_upright { background: #eee url(images/bkdk.png) no-repeat top right; width: 10px; height: 10px; }
+
+#loader { display: none; text-align: center; margin: 20px 0; }
+
+/*----------------------------FOOTER-------------------------------*/
+#footer { width: 1010px; height: 156px; background: url(images/footer-back.png) no-repeat; margin: 0 auto; }
+#footer p { text-align: center; font-weight: bold; color: #d3d3d3; clear: both; }
+#footer p.vide { text-indent: -9999px; height: 120px; }
