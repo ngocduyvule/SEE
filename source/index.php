@@ -174,27 +174,32 @@ require('authenticate.php');
 					</div>
 					<div class="forminput left"><label>Période : </label><br /><input type="text" id="period-text" class="ignore" /></div>
 					<div id="period-range" class="left"></div>
+				<div class="clear"><br /><br /><br /></div>
 				</form>
-				<div class="clear"><br /><br /><br /></div></div>
-				<div><span class="bk_upleft"></span><span class="bk_up"></span><span class="bk_upright"></span></div>
-				<div><div class="bk_left"><div class="bk_table">
-				<table class="table">
-					<tr class="tabletitle">
-						<?php if ($_SESSION['type'] != "agent") { ?>
-							<th><img id="plusfile" src="images/plus_16x16.png" alt="Plus" style="cursor: pointer" /></th>
-						<?php } ?>
-						<th>N° dossier</th>
-						<th>Agence</th>
-						<th>Agent</th>
-						<th>Nom de l'affaire</th>
-						<th>Date arrivée</th>
-						<th>Statut</th>
-						<th>Date envoi</th>
-					</tr>
-					<tr class="tablefile"><td></td></tr>
-				</table>
-				</div><div class="bk_right"></div></div>
-				<div><div class="bk_downleft"></div><div class="bk_down"></div><div class="bk_downright"></div></div>
+				</div>
+				<div>
+					<table cellpadding="0" cellspacing="0">
+						<tr><td class="h10"><img src="images/bkdk_upleft.png" alt=" background" width="10" height="10" /></td><td class="h10"><img src="images/bkdk_up.png" alt=" background" width="980" height="10" /></td><td class="h10"><img src="images/bkdk_upright.png" alt=" background" width="10" height="10" /></td></tr>
+						<tr><td class="w10"><img src="images/bkdk_left.png" alt=" background" width="10" height="100%" /></td><td>
+							<table class="table left" cellpadding="0" cellspacing="0">
+								<tr class="tabletitle">
+									<?php if ($_SESSION['type'] != "agent") { ?>
+									<th><img id="plusfile" src="images/plus_16x16.png" alt="Plus" style="cursor: pointer" /></th>
+									<?php } ?>
+									<th>N° dossier</th>
+									<th>Agence</th>
+									<th>Agent</th>
+									<th>Nom de l'affaire</th>
+									<th>Date arrivée</th>
+									<th>Statut</th>
+									<th>Date envoi</th>
+								</tr>
+								<tr class="tablefile"><td></td></tr>
+							</table>
+						</td><td class="w10"><img src="images/bkdk_right.png" alt=" background" width="10" height="100%" /></td></tr>
+						<tr><td class="h10"><img src="images/bkdk_downleft.png" alt=" background" width="10" height="10" /></td><td class="h10"><img src="images/bkdk_down.png" alt=" background" width="980" height="10" /></td><td class="h10"><img src="images/bkdk_downright.png" alt=" background" width="10" height="10" /></td></tr>
+					</table>
+				</div>
 				<div id="loader"><img src="images/loading-bar.gif" alt="loading" /></div>
 			</div>
 

@@ -53,18 +53,19 @@ a, a:hover { text-decoration: none; color: #a5a5a5; }
 #period-range { width: 300px; }
 
 #tableau { margin: 50px 0; }
-#tableau .table { width: 100%; font-size: 12px; border-collapse: collapse; border:1px solid #bbb; }
+#tableau .table { width: 980px; font-size: 12px; border-collapse: collapse; padding: 0; margin: 0;  }
 #tableau .table tr { height: 25px;}
-#tableau .table td { padding: 5px; border-top: 1px solid #ddd; border-bottom: 1px solid #ccc; }
-#tableau .tabletitle { font-size: 14px; font-weight: bold; color: #fff; background: #bbb; text-align: center; }
-#tableau .tabletitle th { padding: 5px; border-left: 1px solid #ddd; border-right: 1px solid #999; }
+#tableau .table td {  }
+#tableau .tabletitle { font-size: 14px; font-weight: bold; color: #fff; background: #7e7e7e; text-align: center; }
+#tableau .tabletitle th {  }
 #tableau .statutenvoye { background: #fee516; color: #767676; cursor: pointer; }
 #tableau .statutattente { background: #be0e0e; color: #fff; cursor: pointer; }
 #tableau .statutcours { cursor: pointer; }
 
-#tableau .bk_upleft { background: #eee url(images/bkdk.png) no-repeat top left; width: 10px; height: 10px; }
-#tableau .bk_up { background: #eee url(images/bkdk.png) repeat-x top 10px; width: 100%; height: 10px; }
-#tableau .bk_upright { background: #eee url(images/bkdk.png) no-repeat top right; width: 10px; height: 10px; }
+#tableau .bk_top {width: 1000px; height: 10px; }
+#tableau .bk_bottom {width: 1000px; height: 10px; }
+#tableau .w10 {width: 10px;  padding: 0; margin: 0;}
+#tableau .h10 {height: 10px; padding: 0; margin: 0; }
 
 #loader { display: none; text-align: center; margin: 20px 0; }
 

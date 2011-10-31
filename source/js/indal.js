@@ -39,7 +39,7 @@ function readFiles(dossiers, session) {
 	}
 	$("#loader").slideUp(500);
 	$("#tableau tr.tabletitle").after(newfile);
-	$("tr:odd").css("background-color", "#ddd");
+	$(".table tr:odd").css("background-color", "#ddd");
 }
 
 function loadAgences(idAgence) {
@@ -110,7 +110,7 @@ function readAgences(agences, id) {
 	};
 	
 	var oLinkOpen = $('a.jqTransformSelectOpen', $agWrap).click(function(){
-		//if( $agUl.css('display') == 'none' ) {hideSelect();} 
+		if( $agUl.css('display') == 'none' ) {hideSelect();} 
 		if($agSelect.attr('disabled')){return false;}
 
 		$agUl.slideToggle('fast', function(){					
@@ -205,7 +205,7 @@ function selectStatut(statut) {
 	}
 }
 
-function addNewFile(elAfter) {
+function addNewFile(element) {
 	var newfile = "<tr id=\"newTR\" style=\"display: none;\"><td colspan=\"9\" >";
 	newfile += "<form action=\"#\" method=\"POST\" >";
 	newfile += "<div class=\"forminput\"><label>N&deg; de dossier : </label><input type=\"text\" id=\"filenum\" name=\"filenum\"/></div>";
@@ -222,7 +222,7 @@ function addNewFile(elAfter) {
 	newfile += "<div class=\"right\"><img id=\"validateNewFile\" src=\"images/alu-validate_50x50.png\" alt=\"Valider\" style=\"cursor: pointer; margin: 0 10px;\" /><img id=\"cancelNewFile\" src=\"images/alu-cancel_50x50.png\" alt=\"Annuler\" style=\"cursor: pointer; margin: 0 10px;\" /></div>";
 	newfile += "</td></tr>";
 	
-	elAfter.after(newfile);
+	element.after(newfile);
 	$("#newTR td").css("padding", "20px");
 	$("#newTR").slideDown(500);
 	return true;
