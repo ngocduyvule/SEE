@@ -8,6 +8,7 @@ a, a:hover { text-decoration: none; color: #a5a5a5; }
 .clear { clear: both; }
 .left { float: left; }
 .right { float: right; }
+.rouge { color: #be0e0e; font-style : italic; }
 
 /*----------------------------HEADER-------------------------------*/
 #header { background: #eeeeee url(images/header-back.png) no-repeat; width: 1010px; height: 107px; padding-top: 40px; margin: 0 auto; }
@@ -30,7 +31,7 @@ a, a:hover { text-decoration: none; color: #a5a5a5; }
 .btn:focus, .btn:active { outline: none; }
 
 .btn span.logout { background: url(images/x_alt_12x12.png) no-repeat 4px 4px; }
-.btn span.adduser { background: url(images/plus_alt_12x12.png) no-repeat 3px 3px; }
+.btn span.adduser { background: url(images/plus_blu_20x20.png) no-repeat 0px 0px; }
 .btn span.addfile { background: url(images/pen_alt_stroke_12x12.png) no-repeat 3px 3px; }
 .btn span.archives{ background: url(images/layers_12x11.png) no-repeat 3px 3px; }
 .btn span.setdelay{ background: url(images/clock_12x12.png) no-repeat 3px 3px; }
@@ -44,7 +45,7 @@ a, a:hover { text-decoration: none; color: #a5a5a5; }
 #dossier .listvis { visibility: visible; }
 #dossier .submit { padding-right: 50px; }
 #dossier .paddingleft50 { padding-left: 50px; }
-.rouge { color: #be0e0e; font-style : italic; }
+
 
 #info, #delay-text { background: #be0e0e; color: #fff; font-size: 14px; font-weight: bold; font-style: italic; }
 #info { text-align: center; width: 300px; height: 50px; margin: 0 auto; padding: 20px;}
@@ -53,21 +54,41 @@ a, a:hover { text-decoration: none; color: #a5a5a5; }
 #period-range { width: 300px; }
 
 #tableau { margin: 50px 0; }
-#tableau .table { width: 980px; font-size: 12px; border-collapse: collapse; padding: 0; margin: 0;  }
-#tableau .table tr { height: 25px;}
-#tableau .table td {  }
-#tableau .tabletitle { font-size: 14px; font-weight: bold; color: #fff; background: #7e7e7e; text-align: center; }
-#tableau .tabletitle th {  }
-#tableau .statutenvoye { background: #fee516; color: #767676; cursor: pointer; }
-#tableau .statutattente { background: #be0e0e; color: #fff; cursor: pointer; }
-#tableau .statutcours { cursor: pointer; }
+#tableau .table { width: 980px; font-size: 12px; border-collapse: collapse; border-spacing: 0; padding: 0; margin: 0; table-layout: fixed; }
+#tableau .tablefile { background: url(images/border-grey-bottom.png) repeat-x center bottom; height: 40px; }
+#tableau .tablefilelast { background: transparent; }
+#tableau .tabletitle { font-size: 12px; font-weight: bold; color: #eee; background: #7e7e7e; text-align: center; height:10px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
+#tableau .tablesep { height: 4px; background: #7e7e7e; }
+#tableau .tableload { display: none; text-align: center; margin: 20px 0; background: #7e7e7e; }
+#tableau .statuts{ cursor: pointer; text-align: center; vertical-align: middle; }
+#newTR { }
 
-#tableau .bk_top {width: 1000px; height: 10px; }
-#tableau .bk_bottom {width: 1000px; height: 10px; }
-#tableau .w10 {width: 10px;  padding: 0; margin: 0;}
-#tableau .h10 {height: 10px; padding: 0; margin: 0; }
+#tableau .table-frame { width: 1000px; }
+#tableau .table-frame-header { background: #eee url(images/bkdk_bg.png) no-repeat top left; }
+#tableau .table-frame-up { background: #eee url(images/bkdk_bg.png) no-repeat top right; margin: 0 0 0 10px; }
+#tableau .table-frame-up span { background: #eee url(images/bkdk_bg.png) no-repeat top center; margin-right: 10px; display: block; height: 10px; padding-top: 5px; }
+#tableau .table-frame-content { background: #eee url(images/bklt_bg.png) no-repeat bottom left; }
+#tableau .table-frame-center { background: #eee url(images/bklt_bg.png) no-repeat bottom right; margin-left: 10px; }
+#tableau .table-frame-main { background: #eee url(images/bklt_bg.png) no-repeat bottom center; margin-right: 10px; padding-bottom: 10px; }
+#tableau .tdfirst { padding: 3px; }
+#tableau td.tdfirst { background: url(images/shadow-left.png) repeat-y center left; text-align: center; vertical-align: middle;  }
+#tableau td.tdlast { background: url(images/shadow-right.png) repeat-y center right; }
+#tableau th.plus { vertical-align: middle; }
 
-#loader { display: none; text-align: center; margin: 20px 0; }
+#tableau .table-col-plus { width: 30px; }
+#tableau .table-col-num { width: 100px; }
+#tableau .table-col-agence { width: 130px; }
+#tableau .table-col-agent { width: 150px; }
+#tableau .table-col-affaire { }
+#tableau .table-col-datearrive { width: 90px; }
+#tableau .table-col-statut { width: 50px; }
+#tableau .table-col-dateenvoi { width: 90px; }
+
+#tableau .plus-frame-left { background: #7e7e7e  url(images/bkdk_in.png) no-repeat bottom left; }
+#tableau .plus-frame-right { background: #7e7e7e  url(images/bkdk_in.png) no-repeat bottom right; margin-left: 5px; }
+#tableau .plus-frame-top { background: #7e7e7e  url(images/bkdk_in.png) no-repeat top right; margin-left: -5px; }
+#tableau .plus-frame-top div { background: #7e7e7e  url(images/bkdk_in.png) no-repeat top left; width: 5px; height: 5px; }
+
 
 /*----------------------------FOOTER-------------------------------*/
 #footer { width: 1010px; height: 156px; background: url(images/footer-back.png) no-repeat; margin: 0 auto; }

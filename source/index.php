@@ -20,7 +20,7 @@ require('authenticate.php');
 	<script type="text/javascript" src="js/jquery.tipTip.minified.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script type="text/javascript" src="js/indal.js"></script>
-	<script language="javascript">
+	<script type="text/javascript">
 		$(function(){
 			var sessionName = "<?php echo $_SESSION['type']; ?>";
 			var timer = setInterval(reloadFiles, 60000);
@@ -114,7 +114,7 @@ require('authenticate.php');
 					cache: false,
 					beforeSend: function() {
 						$("#tableau tr.tablefile").remove();
-						$("#loader").slideDown(500);
+						$("#tableau tr.tableload").slideDown(500);
 					},
 					success: function(data) {
 						readFiles(data, sessionName);
@@ -165,7 +165,7 @@ require('authenticate.php');
 			</div>
 			
 			<div id="tableau">
-				<div id="filters"><form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+				<div id="filters"><form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 					<div id="Agc" class='forminput agence left'>
 						<label>Agence : </label>
 						<select name='fileagence'>
@@ -177,30 +177,49 @@ require('authenticate.php');
 				<div class="clear"><br /><br /><br /></div>
 				</form>
 				</div>
-				<div>
-					<table cellpadding="0" cellspacing="0">
-						<tr><td class="h10"><img src="images/bkdk_upleft.png" alt=" background" width="10" height="10" /></td><td class="h10"><img src="images/bkdk_up.png" alt=" background" width="980" height="10" /></td><td class="h10"><img src="images/bkdk_upright.png" alt=" background" width="10" height="10" /></td></tr>
-						<tr><td class="w10"><img src="images/bkdk_left.png" alt=" background" width="10" height="100%" /></td><td>
-							<table class="table left" cellpadding="0" cellspacing="0">
-								<tr class="tabletitle">
-									<?php if ($_SESSION['type'] != "agent") { ?>
-									<th><img id="plusfile" src="images/plus_16x16.png" alt="Plus" style="cursor: pointer" /></th>
-									<?php } ?>
-									<th>N° dossier</th>
-									<th>Agence</th>
-									<th>Agent</th>
-									<th>Nom de l'affaire</th>
-									<th>Date arrivée</th>
-									<th>Statut</th>
-									<th>Date envoi</th>
-								</tr>
-								<tr class="tablefile"><td></td></tr>
+				
+				<div class="table-frame">
+					<div class="table-frame-header">
+						<h4 class="table-frame-up">
+							<span></span>
+						</h4>
+					</div>
+					<div class="table-frame-content">
+						<div class="table-frame-center">
+							<div class="table-frame-main">
+								<table class="table" cellpadding="0" cellspacing="0"border="0">
+								<colgroup>
+									<col class="table-col-plus"/>
+									<col class="table-col-num"/>
+									<col class="table-col-agence"/>
+									<col class="table-col-agent"/>
+									<col class="table-col-affaire"/>
+									<col class="table-col-datearrive"/>
+									<col class="table-col-statut"/>
+									<col class="table-col-dateenvoi"/>
+								</colgroup>
+								<tbody>
+									<tr class="tabletitle">
+										<?php if ($_SESSION['type'] != "agent") { ?>
+										<th class="plus"><img id="plusfile" src="images/plus_blu_20x20.png" alt="Plus" style="cursor: pointer" /></th>
+										<?php } ?>
+										<th>N° dossier</th>
+										<th>Agence</th>
+										<th>Agent</th>
+										<th>Nom de l'affaire</th>
+										<th>Date arrivée</th>
+										<th>Statut</th>
+										<th>Date envoi</th>
+									</tr>
+									<tr class="tableload"><td colspan="8"><img src="images/loading-bar.gif" alt="loading" /></td></tr>
+									<tr class="tablesep"><td colspan="8"></td></tr>
+									<tr class="tablefile"><td></td></tr>
+								</tbody>
 							</table>
-						</td><td class="w10"><img src="images/bkdk_right.png" alt=" background" width="10" height="100%" /></td></tr>
-						<tr><td class="h10"><img src="images/bkdk_downleft.png" alt=" background" width="10" height="10" /></td><td class="h10"><img src="images/bkdk_down.png" alt=" background" width="980" height="10" /></td><td class="h10"><img src="images/bkdk_downright.png" alt=" background" width="10" height="10" /></td></tr>
-					</table>
-				</div>
-				<div id="loader"><img src="images/loading-bar.gif" alt="loading" /></div>
+							</div>
+						</div>
+					</div>
+				</div>		
 			</div>
 
 		</div>

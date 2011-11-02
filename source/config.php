@@ -39,13 +39,13 @@
 
 //Define MySQL database parameters
 
-$username = "root";
-$password = "";
+$username = "indal_marvin";
+$password = "f2E4upuYxEDw5mUC";
 $hostname = "localhost";
-$database = "indal";
+$database = "indal_indal";
 
 //Define your canonical domain including trailing slash!, example:
-$domain= "http://localhost/indal/";
+$domain= "http://www.indal-france.com/";
 
 //Define sending email notification to webmaster
 

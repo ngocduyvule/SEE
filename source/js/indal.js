@@ -8,11 +8,17 @@ function readFiles(dossiers, session) {
 	var newfile = "";
 	
 	for (var i = 0, c = nodes.length; i < c; i++) {
-		newfile += "<tr class=\"tablefile\">";
-		if (session != "agent") {
-			newfile += "<td><a href=\"setfile.php?id=" + nodes[i].getAttribute("id") + "\"><img src=\"images/wrench_12x12.png\" /></a></td>";
+		newfile += "<tr class=\"tablefile ";
+		if(i == c-1) {
+			newfile += "tablefilelast";
 		}
-		newfile += "<td>" + nodes[i].getAttribute("numero") + "</td>";
+		newfile +=	"\">";
+		if (session != "agent") {
+			newfile += "<td class=\"tdfirst\"><a href=\"setfile.php?id=" + nodes[i].getAttribute("id") + "\"><img src=\"images/go_blu_20x20.png\" /></a></td><td>";
+		} else {
+			newfile += "td class=\"tdfirst\">";
+		}
+		newfile += nodes[i].getAttribute("numero") + "</td>";
 		newfile += "<td>" + nodes[i].getAttribute("agence") + "</td>";
 		newfile += "<td>" + nodes[i].getAttribute("agent") + "</td>";
 		newfile += "<td>" + nodes[i].getAttribute("affaire");
@@ -22,24 +28,24 @@ function readFiles(dossiers, session) {
 		newfile += "</td>";
 		newfile += "<td>" + nodes[i].getAttribute("datearrive") + "</td>";
 		if(nodes[i].getAttribute("statut") == "En cours") {
-			newfile += "<td class=\"statutcours\">En cours";
+			newfile += "<td class=\"statuts\" title=\"En cours\"><img src=\"images/play_blu_in_28x28.png\" alt=\"En cours\" />";
 		} else if(nodes[i].getAttribute("statut") == "En attente"){
-			newfile += "<td class=\"statutattente\" title=\"Il manque les &eacute;l&eacute;ments ci-dessous &agrave; ce dossier. Le traitement en est interrompu.&nbsp;" + nodes[i].getAttribute("manque") + "\">En attente ";
-			newfile += "<img src=\"images/info_6x12.png\" />";
+			newfile += "<td class=\"statuts\" title=\"Il manque les &eacute;l&eacute;ments ci-dessous &agrave; ce dossier. Le traitement en est interrompu.&nbsp;" + nodes[i].getAttribute("manque") + "\"><img src=\"images/wrong_red_in_28x28.png\" alt=\"En attente\" /> ";
+			//newfile += "<img src=\"images/info_6x12.png\" />";
 		} else if(nodes[i].getAttribute("statut") == "Envoye"){
-			newfile += "<td class=\"statutenvoye\">Envoy&eacute;";
+			newfile += "<td class=\"statuts\" title=\"Envoy&eacute;\"><img src=\"images/right_gre_in_28x28.png\" alt=\"Envoy&eacute;\" />";
 		}
 		newfile += "</td>";
 		if(nodes[i].getAttribute("statut") == "Envoye") {
-			newfile += "<td>" + nodes[i].getAttribute("dateenvoi") + "</td>";
+			newfile += "<td class=\"tdlast\">" + nodes[i].getAttribute("dateenvoi") + "</td>";
 		} else {
-			newfile += "<td></td>";
+			newfile += "<td class=\"tdlast\"></td>";
 		}
 		newfile += "</tr>";
 	}
-	$("#loader").slideUp(500);
-	$("#tableau tr.tabletitle").after(newfile);
-	$(".table tr:odd").css("background-color", "#ddd");
+	$("#tableau tr.tableload").slideUp(500);
+	$("#tableau tr.tablesep").after(newfile);
+	$(".table tr.tablefile:odd").css("background-color", "#ddd");
 }
 
 function loadAgences(idAgence) {
@@ -206,7 +212,10 @@ function selectStatut(statut) {
 }
 
 function addNewFile(element) {
-	var newfile = "<tr id=\"newTR\" style=\"display: none;\"><td colspan=\"9\" >";
+	var newfile = "<tr id=\"newTR\" style=\"display: none;\"><td colspan=\"8\" >";
+	newfile += "<div class=\"plus-frame-left\">";
+	newfile += "<div class=\"plus-frame-right\">";
+	newfile += "<div class=\"plus-frame-top\"><div></div></div>";
 	newfile += "<form action=\"#\" method=\"POST\" >";
 	newfile += "<div class=\"forminput\"><label>N&deg; de dossier : </label><input type=\"text\" id=\"filenum\" name=\"filenum\"/></div>";
 	newfile += "<div class=\"forminput\"><label>Indice : </label><input type=\"text\" id=\"fileind\" name=\"fileind\" size=\"3\"/></div>";
@@ -220,10 +229,11 @@ function addNewFile(element) {
 	newfile += "<div id=\"Agcn\" class=\"forminput agence left\"><label>Agence : </label><select name='fileagence'><option ></option></select></div>";
 	newfile += "<div class=\"forminput agents\" id=\"Ags\" style=\"visibility:hidden;\"><label>Agent : </label><select name=\"fileagent\" ></select></div>";
 	newfile += "<div class=\"right\"><img id=\"validateNewFile\" src=\"images/alu-validate_50x50.png\" alt=\"Valider\" style=\"cursor: pointer; margin: 0 10px;\" /><img id=\"cancelNewFile\" src=\"images/alu-cancel_50x50.png\" alt=\"Annuler\" style=\"cursor: pointer; margin: 0 10px;\" /></div>";
-	newfile += "</td></tr>";
+	newfile += "<div class=\"clear\"><br /></div>";
+	newfile += "</div></div></form></td></tr>";
 	
 	element.after(newfile);
-	$("#newTR td").css("padding", "20px");
+	//$("#newTR td").css("padding", "20px");
 	$("#newTR").slideDown(500);
 	return true;
 }
